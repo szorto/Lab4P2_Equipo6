@@ -11,6 +11,7 @@ public class Lab4P2_Equipo6 {
             Object[][] Bayonetta = new Object[9][9];
             System.out.println("------------------------------");
             System.out.println("----------Bienvenidxs---------");
+            //AAAAAAAAAAAAAAAAAAAAAA
             Bayonetta[0][0] = "  ";
             Bayonetta[0][1] = "A ";
             Bayonetta[0][2] = "B ";
