@@ -22,6 +22,14 @@ public class Peon extends Pieza{
     
     
     public boolean movimiento(Pieza p){
-        return true;
+        if(color){
+            if(y1+ 1 == y2){
+                
+            }
+        }
+            
+        
+        
+        return false;
     }
 }
