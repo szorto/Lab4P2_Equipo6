@@ -23,7 +23,7 @@ public class Dama extends Pieza{
     
     
     
-    public boolean movimiento(Pieza p, Object[][] Bayonetta){
+    public boolean movimiento(int x1, int y1, int x2, int y2, Object[][] Bayonetta){
         return true;
     }
 }

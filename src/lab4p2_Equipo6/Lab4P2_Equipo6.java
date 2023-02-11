@@ -1,12 +1,12 @@
 package lab4p2_Equipo6;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Lab4P2_Equipo6 {
 
     public static void main(String[] args) {
         Scanner entrad = new Scanner(System.in);
-        
 
         Object[][] Bayonetta = new Object[9][9];
         System.out.println("------------------------------");
@@ -66,7 +66,10 @@ public class Lab4P2_Equipo6 {
         Bayonetta[7][6] = new Peon(true) + " ";
         Bayonetta[7][7] = new Peon(true) + " ";
         Bayonetta[7][8] = new Peon(true) + " ";
+        
+        
 
+        //Bayonetta[7][8] = Bayonetta[1][1];
         for (int i = 0; i < Bayonetta.length; i++) {
             for (int j = 0; j < Bayonetta.length; j++) {
                 if (Bayonetta[i][j] == null) {
@@ -83,11 +86,45 @@ public class Lab4P2_Equipo6 {
             System.out.print("Ingrese la posicion de la pieza que quiere mover y donde la movera (xx-xx): ");
             String mue = entrad.nextLine();
             String muee[] = mue.split("-");
+
+            int asda = (int) muee[0].charAt(0) - 64;
+            int fg = muee[0].charAt(1) - 48;
             
-            for (int i = 0; i < muee.length; i++) {
-                if(muee[i].charAt(0) ){
-                    if(muee[i].charAt(0))
+
+            
+            int as = (int) muee[1].charAt(0) - 64;
+            int fge = muee[1].charAt(1) - 48;
+            
+            System.out.println(asda);
+            System.out.println(fg);
+            System.out.println(as);
+            System.out.println(fge);
+            
+            if(Bayonetta[7][8] instanceof Pieza){
+                System.out.println(Bayonetta[7][8]);
+            }
+            System.out.println(Bayonetta[7][8]);System.out.println(Bayonetta[7][8]);
+
+            for (int i = 0; i < Bayonetta.length; i++) {
+                for (int j = 0; j < Bayonetta.length; j++) {
+                    if (Bayonetta[i][j] instanceof Peon) {
+                        System.out.println("oucsdh");
+                        if (((Pieza) Bayonetta[i][j]).movimiento(fg, asda, fge, as, Bayonetta) ==false) {
+                            Bayonetta[as][fge] = Bayonetta[i][j];
+                            Bayonetta[i][j] = null;
+                        }
+                    }
                 }
+            }
+
+            for (int i = 0; i < Bayonetta.length; i++) {
+                for (int j = 0; j < Bayonetta.length; j++) {
+                    if (Bayonetta[i][j] == null) {
+                        Bayonetta[i][j] = "  ";
+                    }
+                    System.out.print("" + Bayonetta[i][j] + "|");
+                }
+                System.out.println("");
             }
 
         } while (win);

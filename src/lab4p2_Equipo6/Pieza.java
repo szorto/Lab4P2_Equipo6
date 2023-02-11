@@ -77,6 +77,6 @@ public abstract class Pieza {
         return nomb;
     }
     
-    public abstract boolean movimiento(Pieza p, Object[][] Bayonetta);
+    public abstract boolean movimiento(int x1, int y1, int x2, int y2, Object[][] Bayonetta);
     
 }
