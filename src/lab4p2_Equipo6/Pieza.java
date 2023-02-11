@@ -5,18 +5,21 @@ public abstract class Pieza {
     protected int y1;
     protected int x2;
     protected int y2;
-    protected char nomb;
+    protected String nomb;
     protected boolean color;
+    
 
-    public Pieza() {
+    public Pieza(boolean color) {
+        this.color = color;
     }
 
-    public Pieza(int x1, int y1, int x2, int y2, boolean color) {
+    public Pieza(int x1, int y1, int x2, int y2, boolean color, String nomb) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
         this.color = color;
+        this.nomb = nomb;
     }
 
     public int getX1() {
@@ -59,11 +62,11 @@ public abstract class Pieza {
         this.color = color;
     }
 
-    public char getNomb() {
+    public String getNomb() {
         return nomb;
     }
 
-    public void setNomb(char nomb) {
+    public void setNomb(String nomb) {
         this.nomb = nomb;
     }
     
@@ -71,9 +74,9 @@ public abstract class Pieza {
 
     @Override
     public String toString() {
-        return "Pieza{" + "x1=" + x1 + ", y1=" + y1 + ", x2=" + x2 + ", y2=" + y2 + ", color=" + color + '}';
+        return nomb;
     }
     
-    public abstract boolean movimiento(Pieza p);
+    public abstract boolean movimiento(Pieza p, Object[][] Bayonetta);
     
 }
